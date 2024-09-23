@@ -44,3 +44,24 @@ CREATE TABLE `dataengineering-project-2024.ecommerce.location_table` (
   state STRING,
   country STRING
 );
+2. User Table
+```sql
+
+CREATE TABLE `dataengineering-project-2024.ecommerce.user_table` (
+  user_id STRING NOT NULL,
+  name STRING,
+  email STRING,
+  signup_date DATE
+);
+
+3. Product Table
+```sql
+CREATE TABLE `dataengineering-project-2024.ecommerce.product_table` (
+  product_id STRING NOT NULL,
+  product_name STRING,
+  category STRING,
+  price FLOAT64
+);
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/Bq1.png)
+
+
