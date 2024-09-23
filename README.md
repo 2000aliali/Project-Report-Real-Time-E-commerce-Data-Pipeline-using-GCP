@@ -127,6 +127,8 @@ FROM
 ![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/bq_mv.png)
 
 
+
 ##### For the final result, feel free to check out this link https://lookerstudio.google.com/reporting/f075cb18-8fa9-437a-a534-737eca95ec04/page/tEnnC
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/DASH1.png)
 ## Conclusion
 This project demonstrates the full data pipeline from simulating e-commerce transaction data to ingesting and streaming it using Pub/Sub, processing it with Dataflow, and finally storing it in BigQuery for analysis. The use of GCP services such as Pub/Sub, Dataflow, and BigQuery allows for real-time, scalable, and reliable data ingestion and processing, which can be applied to various real-time analytics and reporting scenarios.
