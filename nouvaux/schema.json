@@ -1,8 +1,0 @@
-[
-    {"name": "transaction_id", "type": "STRING"},
-    {"name": "timestamp", "type": "TIMESTAMP"},
-    {"name": "user_id", "type": "STRING"},
-    {"name": "product_id", "type": "STRING"},
-    {"name": "location_id", "type": "STRING"},
-    {"name": "amount", "type": "FLOAT"}
-]
