@@ -67,4 +67,40 @@ CREATE TABLE `dataengineering-project-2024.ecommerce.product_table` (
 ```
 ![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/Bq1.png)
 
+3. Data Pipeline
+### Step 5: **Setup Pub/Sub Topic**
+In the Google Cloud Console, go to Pub/Sub and create a topic:
+Topic Name: `realtime-dashboard-data`
+Configure Pub/Sub Permissions: Ensure that the service account has the `roles/pubsub.publisher` permission to publish data to the topic.
 
+I WILL put iage her  
+Step 6: Python Code to Simulate Data and Publish to Pub/Sub
+In your Python script, use the Google Cloud Pub/Sub client library to publish e-commerce transactions in real-time.
+
+
+1. Setup the Google Cloud Clients:
+Initialize the Pub/Sub and BigQuery clients using the service account credentials.
+
+2. Preload Dimension Tables:
+Insert predefined user, product, and location data into the respective BigQuery tables (user_table, product_table, location_table).
+3. Simulate Transaction Data:
+Generate random e-commerce transaction data for a user purchasing a product at a particular location.
+
+4. Publish to Pub/Sub:
+Publish each transaction to Pub/Sub in real-time.
+
+
+### Step 7: **Create Dataflow Pipeline**
+Create a Dataflow Template:
+
+gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-templates/latest/PubSub_to_BigQuery --region europe-west2 --staging-location gs://dataengineering_staging/tmp/ --parameters "inputTopic=projects/dataengineering-project-2024/topics/realtime-dashboard-data,outputTableSpec=dataengineering-project-2024:ecommerce.raw_data"
+
+i will  put imahe her 
+
+
+In Google Cloud Console, create a Dataflow pipeline that reads messages from Pub/Sub and writes them to BigQuery.
+
+
+
+## Conclusion
+This project demonstrates the full data pipeline from simulating e-commerce transaction data to ingesting and streaming it using Pub/Sub, processing it with Dataflow, and finally storing it in BigQuery for analysis. The use of GCP services such as Pub/Sub, Dataflow, and BigQuery allows for real-time, scalable, and reliable data ingestion and processing, which can be applied to various real-time analytics and reporting scenarios.
