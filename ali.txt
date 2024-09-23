@@ -1,0 +1,18 @@
+ gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-templates/latest/PubSub_to_BigQuery --region europe-west2 --staging-location gs://dataengineering_staging/tmp/ --parameters "inputTopic=projects/dataengineering-project-2024/topics/realtime-dashboard-data,outputTableSpec=dataengineering-project-2024:ecommerce.raw_data"
+
+
+create table :
+PS C:\Users\Lenovo\Desktop\GCP_Projet> bq mk --table dataengineering-project-2024:ecommerce.raw_data schema.json
+>>                                         
+gcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dataengineering-project-2024.iam.gserviceaccount.com" --role="roles/bigquery.dataViewer"; gcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dataengineering-project-2024.iam.gserviceaccount.com" --role="roles/bigquery.dataEditor"
+  
+
+
+
+
+ gcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dagcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dataengineering-project-2024.iam.gserviceaccount.com" --role="roles/pubsub.publisher"
+>>
+>> gcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dataengineering-project-2024.iam.gserviceaccount.com" --role="roles/pubsub.subscriber"
+>>
+>> gcloud projects add-iam-policy-binding dataengineering-project-2024 --member="serviceAccount:dataengineering-project-2024@dataengineering-project-2024.iam.gserviceaccount.com" --role="roles/bigquery.dataEditor"
+>>
