@@ -96,7 +96,8 @@ Create a Dataflow Template:
  `bash
 gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-templates/latest/PubSub_to_BigQuery --region europe-west2 --staging-location gs://dataengineering_staging/tmp/ --parameters "inputTopic=projects/dataengineering-project-2024/topics/realtime-dashboard-data,outputTableSpec=dataengineering-project-2024:ecommerce.raw_data"
  `
-![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/Bq1.png)
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/DATAFLOW1.png)
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/DATAFLOW%202.png)
 
 
 In Google Cloud Console, create a Dataflow pipeline that reads messages from Pub/Sub and writes them to BigQuery.
