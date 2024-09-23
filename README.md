@@ -97,13 +97,31 @@ Create a Dataflow Template:
  `bash
 gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-templates/latest/PubSub_to_BigQuery --region europe-west2 --staging-location gs://dataengineering_staging/tmp/ --parameters "inputTopic=projects/dataengineering-project-2024/topics/realtime-dashboard-data,outputTableSpec=dataengineering-project-2024:ecommerce.raw_data"
  `
+
+ In Google Cloud Console, create a Dataflow pipeline that reads messages from Pub/Sub and writes them to BigQuery.
+ 
 ![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/DATAFLOW1.png)
 ![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/DATAFLOW%202.png)
 
+ Create the Materialized View
+You can create a materialized view that aggregates the total sales by product, user, and location, and also includes the timestamp for time-based analysis. Here's an example SQL statement to create the materialized view:
 
-In Google Cloud Console, create a Dataflow pipeline that reads messages from Pub/Sub and writes them to BigQuery.
+sql
+Copier le code
+CREATE MATERIALIZED VIEW `dataengineering-project-2024.ecommerce.sales_summary_mv` AS
+SELECT 
+    r.transaction_id,
+    r.timestamp,
+    r.user_id,
+    r.product_id,
+    r.location_id,
+    r.amount,
+    DATE(r.timestamp) AS transaction_date,
+    EXTRACT(HOUR FROM r.timestamp) AS transaction_hour
+FROM 
+    `dataengineering-project-2024.ecommerce.raw_data` r
 
-
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/bq_mv.png)
 
 ## Conclusion
 This project demonstrates the full data pipeline from simulating e-commerce transaction data to ingesting and streaming it using Pub/Sub, processing it with Dataflow, and finally storing it in BigQuery for analysis. The use of GCP services such as Pub/Sub, Dataflow, and BigQuery allows for real-time, scalable, and reliable data ingestion and processing, which can be applied to various real-time analytics and reporting scenarios.
