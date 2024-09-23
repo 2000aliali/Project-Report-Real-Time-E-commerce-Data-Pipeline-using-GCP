@@ -7,6 +7,8 @@ The objective of this project is to build a real-time data pipeline to simulate 
 ---
 
 ## **1. Project Setup**
+system archicture 
+![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/arche.png)
 
 ### Step 1: **Create a New Google Cloud Project**
 1. Go to the Google Cloud Console.
