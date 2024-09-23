@@ -106,7 +106,7 @@ gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-
  Create the Materialized View
 You can create a materialized view that aggregates the total sales by product, user, and location, and also includes the timestamp for time-based analysis. Here's an example SQL statement to create the materialized view:
 
-sql
+```sql
 Copier le code
 CREATE MATERIALIZED VIEW `dataengineering-project-2024.ecommerce.sales_summary_mv` AS
 SELECT 
@@ -120,6 +120,7 @@ SELECT
     EXTRACT(HOUR FROM r.timestamp) AS transaction_hour
 FROM 
     `dataengineering-project-2024.ecommerce.raw_data` r
+```
 
 ![ScreenEDEFshot](https://github.com/2000aliali/Project-Report-Real-Time-E-commerce-Data-Pipeline-using-GCP/blob/main/IMAGES/bq_mv.png)
 
