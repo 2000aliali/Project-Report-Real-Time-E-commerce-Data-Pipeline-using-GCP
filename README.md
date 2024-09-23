@@ -93,6 +93,7 @@ Publish each transaction to Pub/Sub in real-time.
 
 ### Step 7: **Create Dataflow Pipeline**
 Create a Dataflow Template:
+
  `bash
 gcloud dataflow jobs run dataflow-pubsub-to-bq-job --gcs-location gs://dataflow-templates/latest/PubSub_to_BigQuery --region europe-west2 --staging-location gs://dataengineering_staging/tmp/ --parameters "inputTopic=projects/dataengineering-project-2024/topics/realtime-dashboard-data,outputTableSpec=dataengineering-project-2024:ecommerce.raw_data"
  `
